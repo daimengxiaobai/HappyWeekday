@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7ADCB1D01C3A1C440074FB4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB1CF1C3A1C440074FB4E /* main.m */; };
+		7ADCB1D31C3A1C440074FB4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB1D21C3A1C440074FB4E /* AppDelegate.m */; };
+		7ADCB1D51C3A1C440074FB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADCB1D41C3A1C440074FB4E /* Assets.xcassets */; };
+		7ADCB1D81C3A1C440074FB4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ADCB1D61C3A1C440074FB4E /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7ADCB1CB1C3A1C440074FB4E /* HappyWeekday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyWeekday.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7ADCB1CF1C3A1C440074FB4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7ADCB1D11C3A1C440074FB4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7ADCB1D21C3A1C440074FB4E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7ADCB1D41C3A1C440074FB4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7ADCB1D71C3A1C440074FB4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7ADCB1D91C3A1C440074FB4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7ADCB1C81C3A1C440074FB4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7ADCB1C21C3A1C440074FB4E = {
+			isa = PBXGroup;
+			children = (
+				7ADCB1CD1C3A1C440074FB4E /* HappyWeekday */,
+				7ADCB1CC1C3A1C440074FB4E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7ADCB1CC1C3A1C440074FB4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7ADCB1CB1C3A1C440074FB4E /* HappyWeekday.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7ADCB1CD1C3A1C440074FB4E /* HappyWeekday */ = {
+			isa = PBXGroup;
+			children = (
+				7ADCB1D11C3A1C440074FB4E /* AppDelegate.h */,
+				7ADCB1D21C3A1C440074FB4E /* AppDelegate.m */,
+				7ADCB1D41C3A1C440074FB4E /* Assets.xcassets */,
+				7ADCB1D61C3A1C440074FB4E /* LaunchScreen.storyboard */,
+				7ADCB1D91C3A1C440074FB4E /* Info.plist */,
+				7ADCB1CE1C3A1C440074FB4E /* Supporting Files */,
+			);
+			path = HappyWeekday;
+			sourceTree = "<group>";
+		};
+		7ADCB1CE1C3A1C440074FB4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7ADCB1CF1C3A1C440074FB4E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7ADCB1CA1C3A1C440074FB4E /* HappyWeekday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7ADCB1DC1C3A1C440074FB4E /* Build configuration list for PBXNativeTarget "HappyWeekday" */;
+			buildPhases = (
+				7ADCB1C71C3A1C440074FB4E /* Sources */,
+				7ADCB1C81C3A1C440074FB4E /* Frameworks */,
+				7ADCB1C91C3A1C440074FB4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HappyWeekday;
+			productName = HappyWeekday;
+			productReference = 7ADCB1CB1C3A1C440074FB4E /* HappyWeekday.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7ADCB1C31C3A1C440074FB4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = itcast;
+				TargetAttributes = {
+					7ADCB1CA1C3A1C440074FB4E = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 7ADCB1C61C3A1C440074FB4E /* Build configuration list for PBXProject "HappyWeekday" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7ADCB1C21C3A1C440074FB4E;
+			productRefGroup = 7ADCB1CC1C3A1C440074FB4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7ADCB1CA1C3A1C440074FB4E /* HappyWeekday */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7ADCB1C91C3A1C440074FB4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ADCB1D51C3A1C440074FB4E /* Assets.xcassets in Resources */,
+				7ADCB1D81C3A1C440074FB4E /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7ADCB1C71C3A1C440074FB4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7ADCB1D31C3A1C440074FB4E /* AppDelegate.m in Sources */,
+				7ADCB1D01C3A1C440074FB4E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7ADCB1D61C3A1C440074FB4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7ADCB1D71C3A1C440074FB4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7ADCB1DA1C3A1C440074FB4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7ADCB1DB1C3A1C440074FB4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7ADCB1DD1C3A1C440074FB4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HappyWeekday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.itcast.HappyWeekday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7ADCB1DE1C3A1C440074FB4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HappyWeekday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.itcast.HappyWeekday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7ADCB1C61C3A1C440074FB4E /* Build configuration list for PBXProject "HappyWeekday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ADCB1DA1C3A1C440074FB4E /* Debug */,
+				7ADCB1DB1C3A1C440074FB4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7ADCB1DC1C3A1C440074FB4E /* Build configuration list for PBXNativeTarget "HappyWeekday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7ADCB1DD1C3A1C440074FB4E /* Debug */,
+				7ADCB1DE1C3A1C440074FB4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7ADCB1C31C3A1C440074FB4E /* Project object */;
+}
