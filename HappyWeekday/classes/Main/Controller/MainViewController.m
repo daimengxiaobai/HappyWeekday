@@ -7,8 +7,9 @@
 //
 
 #import "MainViewController.h"
-
+#import "MainTableViewCell.h"
 @interface MainViewController ()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -17,6 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+   //注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"MainTableViewCell" bundle:nil] forCellReuseIdentifier:@"cell"];
+    self.tableView.rowHeight = 200;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+   
+}
+
+#pragma mark ------------- UITableViewDataSource 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainTableViewCell *mainCell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    return mainCell;
 }
 
 - (void)didReceiveMemoryWarning {

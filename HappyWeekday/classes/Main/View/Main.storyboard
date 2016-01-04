@@ -16,14 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="8aO-nU-KYW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-cT-TmN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="lXV-we-gfz" id="in8-yK-1pc"/>
+                                    <outlet property="delegate" destination="lXV-we-gfz" id="Y58-Dp-1hY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="周末一起嗨" id="5O7-2X-oIo"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="CH0-cT-TmN" id="Ve7-lp-3IB"/>
+                        <outlet property="view" destination="CH0-cT-TmN" id="f2P-FF-ZHn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1e-b5-YR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="808.5" y="398.5"/>
+            <point key="canvasLocation" x="778.5" y="398.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JOq-1H-7dW">
