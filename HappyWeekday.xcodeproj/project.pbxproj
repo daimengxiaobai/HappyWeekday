@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1115A61AA5EC8A4D6D4EDCE0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1438648B2375EA5B4E703 /* libPods.a */; };
+		7A740D6D1C3BA0ED00ABFC16 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A740D6C1C3BA0ED00ABFC16 /* MainModel.m */; };
+		7A740D711C3BB9A600ABFC16 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 7A740D701C3BB9A600ABFC16 /* File */; };
 		7ADCB1D01C3A1C440074FB4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB1CF1C3A1C440074FB4E /* main.m */; };
 		7ADCB1D31C3A1C440074FB4E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB1D21C3A1C440074FB4E /* AppDelegate.m */; };
 		7ADCB1D51C3A1C440074FB4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ADCB1D41C3A1C440074FB4E /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 /* Begin PBXFileReference section */
 		14F1438648B2375EA5B4E703 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D32C2EBC89E960951DE878B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A740D6B1C3BA0ED00ABFC16 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
+		7A740D6C1C3BA0ED00ABFC16 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		7A740D701C3BB9A600ABFC16 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		7ADCB1CB1C3A1C440074FB4E /* HappyWeekday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyWeekday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ADCB1CF1C3A1C440074FB4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7ADCB1D11C3A1C440074FB4E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +181,9 @@
 		7ADCB2161C3A4EAD0074FB4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A740D6B1C3BA0ED00ABFC16 /* MainModel.h */,
+				7A740D6C1C3BA0ED00ABFC16 /* MainModel.m */,
+				7A740D701C3BB9A600ABFC16 /* File */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +317,7 @@
 			files = (
 				7ADCB23B1C3A76A40074FB4E /* MainTableViewCell.xib in Resources */,
 				7ADCB1D51C3A1C440074FB4E /* Assets.xcassets in Resources */,
+				7A740D711C3BB9A600ABFC16 /* File in Resources */,
 				7ADCB1D81C3A1C440074FB4E /* LaunchScreen.storyboard in Resources */,
 				7ADCB22A1C3A51060074FB4E /* Discover.storyboard in Resources */,
 				7ADCB2281C3A50E60074FB4E /* Mine.storyboard in Resources */,
@@ -377,6 +386,7 @@
 				7ADCB2201C3A4EAD0074FB4E /* MineViewController.m in Sources */,
 				7ADCB1D01C3A1C440074FB4E /* main.m in Sources */,
 				7ADCB21F1C3A4EAD0074FB4E /* MainViewController.m in Sources */,
+				7A740D6D1C3BA0ED00ABFC16 /* MainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "MainTableViewCell.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface MainTableViewCell ()
 //活动图片
 @property (weak, nonatomic) IBOutlet UIImageView *activityImageView;
@@ -15,12 +15,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *activityNameLabel;
 //活动价格
 @property (weak, nonatomic) IBOutlet UILabel *activityPriceLabel;
+//距离
 @property (weak, nonatomic) IBOutlet UIButton *activityDistanceBtn;
 
 @end
 
 @implementation MainTableViewCell
-
+//在model的set方法赋值
+- (void)setModel:(MainModel *)model{
+    [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:model.image_big] placeholderImage:nil];
+    self.activityPriceLabel.text = model.price;
+    self.activityNameLabel.text = model.title;
+    
+}
 - (void)awakeFromNib {
     // Initialization code
 }
