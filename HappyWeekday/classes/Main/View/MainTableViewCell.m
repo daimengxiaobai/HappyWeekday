@@ -26,6 +26,12 @@
     [self.activityImageView sd_setImageWithURL:[NSURL URLWithString:model.image_big] placeholderImage:nil];
     self.activityPriceLabel.text = model.price;
     self.activityNameLabel.text = model.title;
+    if ([model.type integerValue] != RecommendTypeActivity) {
+        self.activityPriceLabel.hidden = YES;
+        self.activityDistanceBtn.hidden = YES;
+    }else{
+        self.activityDistanceBtn.hidden = NO;
+    }
     
 }
 - (void)awakeFromNib {

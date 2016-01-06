@@ -29,9 +29,11 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-VI-QDX">
-                        <rect key="frame" x="269" y="177" width="106" height="22"/>
-                        <state key="normal" title="Button"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qF-VI-QDX">
+                        <rect key="frame" x="287" y="177" width="88" height="22"/>
+                        <state key="normal" title="333.3km" image="pos">
+                            <color key="titleColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                     </button>
                 </subviews>
             </tableViewCellContentView>
@@ -41,7 +43,10 @@
                 <outlet property="activityNameLabel" destination="Zay-oX-QNd" id="vwt-gT-tc6"/>
                 <outlet property="activityPriceLabel" destination="z3o-0e-z1d" id="oiE-GY-scD"/>
             </connections>
-            <point key="canvasLocation" x="484.5" y="405.5"/>
+            <point key="canvasLocation" x="515.5" y="401.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="pos" width="12" height="15"/>
+    </resources>
 </document>
