@@ -25,7 +25,8 @@
 #import "ClasssifyViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <AFNetworking/AFHTTPSessionManager.h>
-@interface MainViewController ()
+@interface MainViewController ()<UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //全部列表数据
 @property (nonatomic, strong) NSMutableArray *listArray;
@@ -39,10 +40,11 @@
 @property(nonatomic, retain) UIScrollView *carouseView;
 
 @property(nonatomic, retain) UIPageControl *pageControl;
+
+@property(nonatomic, strong) NSTimer *timer;
 @end
 
 @implementation MainViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -67,6 +69,7 @@
     self.navigationItem.rightBarButtonItem = rightBarBtn;
     [self request];
     [self configTableViewHeadView];
+    [self startTimer];
 }
 
 #pragma mark ------------- UITableViewDataSource 
@@ -90,7 +93,7 @@
     mainCell.model = array[indexPath.row];
     return mainCell;
 }
-
+//分组标题高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 20;
 }
@@ -108,6 +111,7 @@
     [view addSubview:sectionView];
     return view;
 }
+//点击cell 进入活动介绍或专题介绍
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
         ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
@@ -133,9 +137,9 @@
 //自定义tableview头部
 - (void)configTableViewHeadView{
     UIView *HeadView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 343)];
+//tableView的tableHeaderView属性  ！！！！！很重要的属性
     self.tableView.tableHeaderView = HeadView;
-//轮播图
-    
+    //轮播图
     self.carouseView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, 186)];
     self.carouseView.contentSize = CGSizeMake(self.adArray.count * KScreenWidth, 186);
     self.carouseView.pagingEnabled = YES;  //整屏滑动
@@ -152,9 +156,19 @@
     
     for (int i = 0; i < self.adArray.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(KScreenWidth * i, 0, KScreenWidth, 186)];
-        [imageView sd_setImageWithURL:[NSURL URLWithString:self.adArray[i]] placeholderImage:nil];
+        [imageView sd_setImageWithURL:[NSURL URLWithString:self.adArray[i][@"url"]] placeholderImage:nil];
         [self.carouseView addSubview:imageView];
+        
+        UIButton *touchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+       
+        touchBtn.frame = imageView.frame;
+        touchBtn.tag = 100 + i;
+        [touchBtn addTarget:self action:@selector(touchAdvertisement:) forControlEvents:UIControlEventTouchUpInside];
+        [self.carouseView addSubview:touchBtn];
+       
+        
     }
+    
     [HeadView addSubview:self.carouseView];
     [HeadView addSubview:self.pageControl];
     //按钮
@@ -170,21 +184,31 @@
 
     //精选活动&专门专题
     UIButton *activityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    activityBtn.frame = CGRectMake(0, 186, KScreenWidth / 2, 343 - 186 + KScreenWidth / 4);
+    activityBtn.frame = CGRectMake(0, 191 + KScreenWidth / 4, KScreenWidth / 2, 343 - 186 - KScreenWidth / 4 - 8);
     [activityBtn setImage:[UIImage imageNamed:@"home_huodong@2x(1)"] forState:UIControlStateNormal];
     activityBtn.tag = 104;
-    [activityBtn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [activityBtn addTarget:self action:@selector(goodActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [HeadView addSubview:activityBtn];
     
     UIButton *themeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    themeBtn.frame = CGRectMake(KScreenWidth / 2, 186, KScreenWidth / 2, 343 - 186 + KScreenWidth / 4);
+    themeBtn.frame = CGRectMake(KScreenWidth / 2, 191 + KScreenWidth / 4, KScreenWidth / 2, 343 - 186 - KScreenWidth / 4 - 8);
     [themeBtn setImage:[UIImage imageNamed:@"home_zhuanti@2x(1)"] forState:UIControlStateNormal];
     themeBtn.tag = 105;
-    [themeBtn addTarget:self action:@selector(mainActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [themeBtn addTarget:self action:@selector(hotActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [HeadView addSubview:themeBtn];
 }
-
-    
+//- (UIScrollView *)carouseView{
+//    if (_carouseView == nil) {
+//        
+//    }
+//    return _carouseView;
+//}
+//- (UIPageControl *)pageControl{
+//    if (_pageControl == nil) {
+//        
+//    }
+//    return _pageControl;
+//}
 
 //网络请求
 - (void)request{
@@ -231,7 +255,8 @@
             self.adArray = [NSMutableArray new];
             NSArray *adDataArray = dic[@"adData"];
             for (NSDictionary *dic in adDataArray) {
-                [self.adArray addObject:dic[@"url"]];
+                NSDictionary *dict = @{@"url" : dic[@"url"], @"type" : dic[@"type"]};
+                [self.adArray addObject:dict];
             }
             //拿到数据之后重新刷新headView
             [self configTableViewHeadView];
@@ -249,9 +274,14 @@
     
 }
 -(void)mainActivityButtonAction:(UIButton *)btn{
-    ClasssifyViewController *classifyVC = [[ClasssifyViewController alloc] init];
-    [self.navigationController pushViewController:classifyVC animated:YES];
-}
+    if (btn.tag > 0) {
+        ClasssifyViewController *classifyVC = [[ClasssifyViewController alloc] init];
+        
+        [self.navigationController pushViewController:classifyVC animated:YES];
+    }
+    
+    
+   }
 
 -(void)goodActivityButtonAction:(UIButton *)btn{
     GoodActivityViewController *goodActivityVC = [[GoodActivityViewController alloc] init];
@@ -260,6 +290,47 @@
 -(void)hotActivityButtonAction:(UIButton *)btn{
     HotActivityViewController *hotActivityVC = [[HotActivityViewController alloc] init];
     [self.navigationController pushViewController:hotActivityVC animated:YES];
+}
+- (void)touchAdvertisement:(UIButton *)btn{
+    //从数组中的字典里面取出type类型
+    NSString *type = self.adArray[btn.tag - 100][@"type"];
+    if ([type integerValue ] == 1){
+    ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
+        //活动ID
+
+    [self.navigationController pushViewController:activityVC animated:YES];
+    }else{
+        HotActivityViewController *hotVC = [[HotActivityViewController alloc] init];
+        [self.navigationController pushViewController:hotVC animated:nil];
+    }
+}
+#pragma marks -------- startTimer
+- (void)startTimer{
+    //防止定时器重复创建
+    if (self.timer != nil) {
+        return;
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(rollAnimation) userInfo:nil repeats:YES];
+}
+- (void)pageSelectAction:(UIPageControl *)pageControl{
+    NSInteger pageNumber = self.pageControl.currentPage;
+    CGFloat pageWidth = self.carouseView.frame.size.width;
+    self.carouseView.contentOffset = CGPointMake(pageNumber * pageWidth, 0);
+    
+}
+//每两秒执行一次，图片自动轮播
+
+- (void)rollAnimation{
+    NSInteger page = (self.pageControl.currentPage + 1) % self.adArray.count;
+    self.pageControl.currentPage = page;
+    //计算出scrollView应该滚动的x轴坐标
+    CGFloat offsetx = page * KScreenWidth;
+    [self.carouseView setContentOffset:CGPointMake(offsetx, 0) animated:YES];
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    //停止定时器
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)didReceiveMemoryWarning {

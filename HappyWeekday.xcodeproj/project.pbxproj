@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1115A61AA5EC8A4D6D4EDCE0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1438648B2375EA5B4E703 /* libPods.a */; };
+		7A6C4D8F1C3D4DE300EFB2F3 /* UIViewController+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6C4D8E1C3D4DE300EFB2F3 /* UIViewController+Common.m */; };
 		7A740D6D1C3BA0ED00ABFC16 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A740D6C1C3BA0ED00ABFC16 /* MainModel.m */; };
 		7A740D711C3BB9A600ABFC16 /* File in Resources */ = {isa = PBXBuildFile; fileRef = 7A740D701C3BB9A600ABFC16 /* File */; };
 		7ADCB1D01C3A1C440074FB4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADCB1CF1C3A1C440074FB4E /* main.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		14F1438648B2375EA5B4E703 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D32C2EBC89E960951DE878B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A6C4D8D1C3D4DE300EFB2F3 /* UIViewController+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Common.h"; sourceTree = "<group>"; };
+		7A6C4D8E1C3D4DE300EFB2F3 /* UIViewController+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Common.m"; sourceTree = "<group>"; };
 		7A740D6B1C3BA0ED00ABFC16 /* MainModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
 		7A740D6C1C3BA0ED00ABFC16 /* MainModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
 		7A740D701C3BB9A600ABFC16 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 			children = (
 				7AFF190F1C3CAE3C0094EB20 /* Happy.pch */,
 				7AFF19101C3CB3140094EB20 /* WHdefine.h */,
+				7A6C4D8D1C3D4DE300EFB2F3 /* UIViewController+Common.h */,
+				7A6C4D8E1C3D4DE300EFB2F3 /* UIViewController+Common.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -432,6 +437,7 @@
 				7AFF19131C3CBCEE0094EB20 /* SelectCityViewController.m in Sources */,
 				7ADCB21F1C3A4EAD0074FB4E /* MainViewController.m in Sources */,
 				7AFF191C1C3CC0250094EB20 /* ActivityDetailViewController.m in Sources */,
+				7A6C4D8F1C3D4DE300EFB2F3 /* UIViewController+Common.m in Sources */,
 				7A740D6D1C3BA0ED00ABFC16 /* MainModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
