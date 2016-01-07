@@ -214,8 +214,9 @@
 - (void)request{
     NSString *urlString = KMainDataList;
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
-    [manager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+        [manager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"%lld", downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 //        NSLog(@"%@", responseObject);
@@ -236,7 +237,7 @@
                 
                 [self.activityArray addObject:model];
             }
-            NSLog(@"activityArray =  %@", self.activityArray);
+            
             [self.listArray addObject:self.activityArray];
             //推荐专题
             NSArray *rcDataArray = dic[@"rcData"];
@@ -247,7 +248,7 @@
                 [self.themeArray addObject:model];
                 
             }
-            NSLog(@"themeArray = %@", self.themeArray);
+           
             [self.listArray addObject:self.themeArray];
             //刷新tableView数据
             [self.tableView reloadData];
