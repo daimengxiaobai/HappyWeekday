@@ -12,6 +12,7 @@
 #import "WHdefine.h"
 @interface ActivityDetailViewController ()
 
+
 @end
 
 @implementation ActivityDetailViewController
@@ -20,7 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"活动详情";
-    self.view.backgroundColor = [UIColor redColor];
     self.tabBarController.hidesBottomBarWhenPushed = NO;
     [self getModel];
 }
@@ -30,10 +30,11 @@
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
     sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [sessionManager GET:[NSString stringWithFormat:KActivityDetail, _activityId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
+    [sessionManager GET:[NSString stringWithFormat:kActivityDetail, _activityId] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         NSLog(@"%lld", downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"%@", responseObject);
+         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         NSLog(@"%@", error);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c2v-0a-Cac">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="c2v-0a-Cac">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -8,10 +8,10 @@
         <!--周末一起嗨-->
         <scene sceneID="sgN-Vx-ElV">
             <objects>
-                <viewController id="lXV-we-gfz" customClass="MainViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main" id="lXV-we-gfz" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1d6-a2-8LK"/>
-                        <viewControllerLayoutGuide type="bottom" id="FCD-aA-Uun"/>
+                        <viewControllerLayoutGuide type="top" id="z69-Z1-7mt"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZHg-ow-zOE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8aO-nU-KYW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -37,7 +37,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1e-b5-YR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="778.5" y="398.5"/>
+            <point key="canvasLocation" x="687.5" y="377.5"/>
+        </scene>
+        <!--Activity Detail View Controller-->
+        <scene sceneID="84q-Jj-tqK">
+            <objects>
+                <viewController storyboardIdentifier="ActivityDetailVC" id="IxM-Mi-16T" customClass="ActivityDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VOm-D4-btK"/>
+                        <viewControllerLayoutGuide type="bottom" id="d9k-d2-ntr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C2c-IX-JfG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FQ4-cu-77P">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TqO-VI-qHr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="186"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCX-eh-BRV">
+                                        <rect key="frame" x="0.0" y="194" width="375" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="截止日期" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-u2-MoW">
+                                        <rect key="frame" x="0.0" y="246" width="375" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="参考价格" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoP-fW-Kaf">
+                                        <rect key="frame" x="0.0" y="299" width="375" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ip-Ib-Z8p">
+                                        <rect key="frame" x="0.0" y="351" width="375" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grayLine" translatesAutoresizingMaskIntoConstraints="NO" id="i0j-jo-tDm">
+                                        <rect key="frame" x="0.0" y="298" width="375" height="1"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ac_location_normal" translatesAutoresizingMaskIntoConstraints="NO" id="gP2-gz-705">
+                                        <rect key="frame" x="0.0" y="358" width="27" height="28"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list_make_out" translatesAutoresizingMaskIntoConstraints="NO" id="LrI-04-oSR">
+                                        <rect key="frame" x="360" y="358" width="15" height="28"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW1-RA-clJ">
+                                        <rect key="frame" x="0.0" y="403" width="375" height="44"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="Ks5-iG-8Oc">
+                                        <rect key="frame" x="0.0" y="403" width="34" height="33"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="list_make_out" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-hl-128">
+                                        <rect key="frame" x="360" y="409" width="15" height="27"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="活动详情" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F20-gC-PCz">
+                                        <rect key="frame" x="0.0" y="455" width="375" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RY7-eL-o9Z">
+                                        <rect key="frame" x="0.0" y="489" width="375" height="178"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Va5-rO-VYh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095.5" y="377.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JOq-1H-7dW">
@@ -57,7 +139,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mZR-Xy-eaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="218" y="399"/>
+            <point key="canvasLocation" x="196.5" y="377.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ac_location_normal" width="25" height="30"/>
+        <image name="grayLine" width="1" height="1"/>
+        <image name="list_make_out" width="8" height="15"/>
+        <image name="phone" width="24" height="22"/>
+    </resources>
 </document>

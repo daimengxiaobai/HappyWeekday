@@ -127,7 +127,6 @@
 				7ADCB1D21C3A1C440074FB4E /* AppDelegate.m */,
 				7ADCB1D41C3A1C440074FB4E /* Assets.xcassets */,
 				7ADCB1D61C3A1C440074FB4E /* LaunchScreen.storyboard */,
-				7ADCB1D91C3A1C440074FB4E /* Info.plist */,
 				7ADCB1CE1C3A1C440074FB4E /* Supporting Files */,
 			);
 			path = HappyWeekday;
@@ -136,6 +135,7 @@
 		7ADCB1CE1C3A1C440074FB4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7ADCB1D91C3A1C440074FB4E /* Info.plist */,
 				7ADCB1CF1C3A1C440074FB4E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -544,7 +544,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/scjy/Desktop/HappyWeekday/HappyWeekday/Library/Happy.pch;
 				INFOPLIST_FILE = HappyWeekday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.itcast.HappyWeekday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -559,7 +559,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = /Users/scjy/Desktop/HappyWeekday/HappyWeekday/Library/Happy.pch;
 				INFOPLIST_FILE = HappyWeekday/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.itcast.HappyWeekday;
 				PRODUCT_NAME = "$(TARGET_NAME)";

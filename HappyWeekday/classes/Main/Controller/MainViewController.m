@@ -54,6 +54,7 @@
     self.tableView.rowHeight = 210;
     self.automaticallyAdjustsScrollViewInsets = NO;
     
+    
     //left
     UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"北京" style:UIBarButtonItemStylePlain target:self action:@selector(selectCityAction:)];
     leftBtn.tintColor = [UIColor whiteColor];
@@ -188,6 +189,7 @@
     [activityBtn setImage:[UIImage imageNamed:@"home_huodong@2x(1)"] forState:UIControlStateNormal];
     activityBtn.tag = 104;
     [activityBtn addTarget:self action:@selector(goodActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     [HeadView addSubview:activityBtn];
     
     UIButton *themeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -197,18 +199,6 @@
     [themeBtn addTarget:self action:@selector(hotActivityButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [HeadView addSubview:themeBtn];
 }
-//- (UIScrollView *)carouseView{
-//    if (_carouseView == nil) {
-//        
-//    }
-//    return _carouseView;
-//}
-//- (UIPageControl *)pageControl{
-//    if (_pageControl == nil) {
-//        
-//    }
-//    return _pageControl;
-//}
 
 //网络请求
 - (void)request{
@@ -217,9 +207,9 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", nil];
         [manager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        NSLog(@"%lld", downloadProgress.totalUnitCount);
+//        NSLog(@"%lld", downloadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSLog(@"%@", responseObject);
+        NSLog(@"%@", responseObject);
         NSDictionary *resultDic = responseObject;
         
         NSString *status = resultDic[@"status"];
@@ -239,6 +229,7 @@
             }
             
             [self.listArray addObject:self.activityArray];
+           
             //推荐专题
             NSArray *rcDataArray = dic[@"rcData"];
             self.themeArray = [NSMutableArray new];
@@ -250,6 +241,7 @@
             }
            
             [self.listArray addObject:self.themeArray];
+             NSLog(@"self.listArray = %@", self.listArray);
             //刷新tableView数据
             [self.tableView reloadData];
             //广告
@@ -266,7 +258,7 @@
              NSString *cityName = dic[@"cityname"];
             self.navigationItem.leftBarButtonItem.title = cityName;
         } else {
-            
+        
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"%@", error);
@@ -275,14 +267,14 @@
     
 }
 -(void)mainActivityButtonAction:(UIButton *)btn{
-    if (btn.tag > 0) {
+    
         ClasssifyViewController *classifyVC = [[ClasssifyViewController alloc] init];
         
         [self.navigationController pushViewController:classifyVC animated:YES];
     }
     
     
-   }
+  
 
 -(void)goodActivityButtonAction:(UIButton *)btn{
     GoodActivityViewController *goodActivityVC = [[GoodActivityViewController alloc] init];
@@ -296,10 +288,15 @@
     //从数组中的字典里面取出type类型
     NSString *type = self.adArray[btn.tag - 100][@"type"];
     if ([type integerValue ] == 1){
-    ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
+        UIStoryboard *mainStoryBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        
+    
+        ActivityDetailViewController *activityVC = [mainStoryBoard instantiateViewControllerWithIdentifier:@"ActivityDetailVC"];
+//        ActivityDetailViewController *activityVC = [[ActivityDetailViewController alloc] init];
+        
         //活动ID
-
-    [self.navigationController pushViewController:activityVC animated:YES];
+        activityVC.activityId = self.adArray[btn.tag - 100][@"id"];
+        [self.navigationController pushViewController:activityVC animated:YES];
     }else{
         HotActivityViewController *hotVC = [[HotActivityViewController alloc] init];
         [self.navigationController pushViewController:hotVC animated:nil];
